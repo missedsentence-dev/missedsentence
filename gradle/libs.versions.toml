@@ -1,0 +1,13 @@
+[versions]
+agp = "8.8.2"
+kotlin = "2.0.0"
+vehicleSdk = "2.3.2"
+naviHelperSdk = "3.0.5"
+
+[libraries]
+pleos-vehicle-sdk = { module = "ai.pleos.playground:Vehicle", version.ref = "vehicleSdk" }
+pleos-navihelper-sdk = { module = "ai.pleos.playground:NaviHelper", version.ref = "naviHelperSdk" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
