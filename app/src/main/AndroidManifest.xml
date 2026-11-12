@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- Pleos Vehicle SDK 조회 권한. 방향지시등, 브레이크 페달, 조향각을 읽습니다. 차량 제어 권한은 쓰지 않습니다. -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_INFO" />
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CAR_POWERTRAIN" />
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />
+    <uses-permission android:name="pleos.car.permission.CAR_SPEED" />
+    <uses-permission android:name="pleos.car.permission.READ_CAR_STEERING" />
+
+    <!-- NaviHelper SDK: 회전 안내, 주의 지점, 제한속도, 즐겨찾기, 길안내 시작 -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE" />
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+    <uses-permission android:name="pleos.car.permission.NAVI_CUSTOM_MAP" />
+    <uses-permission android:name="pleos.car.permission.NAVI_CUSTOM_ROUTE" />
+    <uses-permission android:name="pleos.car.permission.NAVI_CUSTOM_ETC" />
+
+    <!-- Android Automotive Car API: 속도, 기어, 조향각, 주행 규제 상태 -->
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+    <uses-permission android:name="android.car.permission.READ_CAR_STEERING" />
+
+    <!-- 내비 화면을 보는 동안에도 재생을 이어 가는 미디어 재생 서비스. 네트워크 권한은 쓰지 않습니다. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Android 11 이상에서 음성 합성 엔진을 찾으려면 필요합니다. 녹음 파일이 없는 문장에만 씁니다. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
+    <!-- 말소리 콘텐츠를 듣는 앱이므로 오디오 앱으로 분류합니다. -->
+    <application
+        android:name=".MissedApp"
+        android:appCategory="audio"
+        android:allowBackup="false"
+        tools:replace="android:allowBackup"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MissedSentence">
+
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <!-- Pleos Connect 음악과 오디오 앱 개발 가이드: 앱 목록에 보이도록 선언 -->
+        <meta-data
+            android:name="androidx.car.app.launchable"
+            android:value="true" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|uiMode|density|keyboard|keyboardHidden|navigation"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true">
+            <!-- 주행 중에는 큰 재생 버튼, 진행 막대, 이유 아이콘만 보여 주도록 설계했습니다. -->
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.PlaybackService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- 차량 미디어 화면과 핸들 버튼이 묶음 목록, 재생 상태, 재생 조작을 주고받는 창구.
+             주행 중에는 이 창구로 차량 미디어 화면에 제목과 쉬는 이유가 보입니다. -->
+        <service
+            android:name=".service.BrowseService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

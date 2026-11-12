@@ -1,0 +1,132 @@
+{
+  "id": "english_commute",
+  "title": "출근길 영어 문장",
+  "kind": "language",
+  "language": "en",
+  "order": 10,
+  "description": "출근길과 사무실에서 쓰는 짧은 영어 문장. 이 앱을 위해 직접 쓴 문장입니다.",
+  "voice": "Piper en_US-ljspeech-medium 합성 음성",
+  "license": "문장: 직접 작성. 소리: Piper(MIT)와 LJ Speech 데이터(퍼블릭 도메인)로 학습한 음성으로 합성.",
+  "sentences": [
+    {
+      "text": "Good morning. Let's warm up with a few sentences for the road.",
+      "audio": "s01.ogg",
+      "ms": 3898
+    },
+    {
+      "text": "I usually leave home a little before eight.",
+      "audio": "s02.ogg",
+      "ms": 2903
+    },
+    {
+      "text": "Traffic is lighter than I expected today.",
+      "audio": "s03.ogg",
+      "ms": 2348
+    },
+    {
+      "text": "Could we move the meeting to ten thirty?",
+      "audio": "s04.ogg",
+      "ms": 2111
+    },
+    {
+      "text": "I'm running about five minutes late, but I'm on my way.",
+      "audio": "s05.ogg",
+      "ms": 3268
+    },
+    {
+      "text": "Let me check my calendar and get back to you.",
+      "audio": "s06.ogg",
+      "ms": 3074
+    },
+    {
+      "text": "That sounds like a good plan to me.",
+      "audio": "s07.ogg",
+      "ms": 2064
+    },
+    {
+      "text": "Would you mind sending me the file before lunch?",
+      "audio": "s08.ogg",
+      "ms": 2512
+    },
+    {
+      "text": "I'll take a look at it as soon as I get to the office.",
+      "audio": "s09.ogg",
+      "ms": 3194
+    },
+    {
+      "text": "Thanks for waiting. I really appreciate your patience.",
+      "audio": "s10.ogg",
+      "ms": 3467
+    },
+    {
+      "text": "Let's go over the main points one more time.",
+      "audio": "s11.ogg",
+      "ms": 2532
+    },
+    {
+      "text": "I'm not sure yet, but I'll find out by tomorrow.",
+      "audio": "s12.ogg",
+      "ms": 2896
+    },
+    {
+      "text": "Can you say that again a little more slowly?",
+      "audio": "s13.ogg",
+      "ms": 2639
+    },
+    {
+      "text": "It took longer than we thought, but we finished it.",
+      "audio": "s14.ogg",
+      "ms": 2982
+    },
+    {
+      "text": "We should leave early to avoid the rush hour.",
+      "audio": "s15.ogg",
+      "ms": 2760
+    },
+    {
+      "text": "I'd like a medium coffee with no sugar, please.",
+      "audio": "s16.ogg",
+      "ms": 3264
+    },
+    {
+      "text": "Do you have a few minutes to talk this afternoon?",
+      "audio": "s17.ogg",
+      "ms": 2604
+    },
+    {
+      "text": "The weather is supposed to clear up later today.",
+      "audio": "s18.ogg",
+      "ms": 2811
+    },
+    {
+      "text": "I forgot my umbrella, so I hope it stays dry.",
+      "audio": "s19.ogg",
+      "ms": 3244
+    },
+    {
+      "text": "Let's keep it simple and start with the first step.",
+      "audio": "s20.ogg",
+      "ms": 3155
+    },
+    {
+      "text": "I learned something new from that conversation.",
+      "audio": "s21.ogg",
+      "ms": 2619
+    },
+    {
+      "text": "Please let me know if anything changes.",
+      "audio": "s22.ogg",
+      "ms": 2542
+    },
+    {
+      "text": "It was a long day, but a good one.",
+      "audio": "s23.ogg",
+      "ms": 2311
+    },
+    {
+      "text": "That's all for today. See you on the next drive.",
+      "audio": "s24.ogg",
+      "ms": 3242
+    }
+  ]
+}

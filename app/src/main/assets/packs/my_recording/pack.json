@@ -1,0 +1,11 @@
+{
+  "id": "my_recording",
+  "title": "직접 녹음한 낭독",
+  "kind": "story",
+  "language": "ko",
+  "order": 20,
+  "description": "직접 녹음한 낭독을 문장별로 나눠 넣는 자리입니다. tools/split_recording.py 로 채웁니다.",
+  "voice": "",
+  "license": "",
+  "sentences": []
+}
