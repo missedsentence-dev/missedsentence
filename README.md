@@ -95,6 +95,7 @@ Windows용 스크립트는 다음과 같습니다. 모두 `powershell -Execution
 | 스크립트 | 하는 일 |
 |---|---|
 | `start-car.ps1` | Android Studio를 켜지 않고 가상 차량만 켬. PC가 느릴 때 씀 |
+| `fix-window.ps1` | 가상 차량 창이 화면 밖에 걸쳐 떴을 때 화면 왼쪽 위로 옮김. `start-car.ps1` 이 끝에 스스로 부름 |
 | `build-run.ps1` | 빌드, 설치, 권한 허용, 실행, Virtual Console 연결. 끝에 `-SkipBuild` 를 붙이면 설치와 실행만 |
 | `make-apk.ps1` | 제출용 설치 파일 두 개를 만들어 `apk` 폴더에 모음 |
 | `collect-info.ps1` | 에뮬레이터에서 화면과 차량 값을 단계별로 모아 묶음 파일로 만듦 |
@@ -137,6 +138,8 @@ Pleos Connect Emulator v2.1.0 이미지에서는 기어가 P가 아니면 직접
 | 내비 원문 기록 | NaviHelper에서 받은 회전 안내, 주의 지점, 제한속도의 원문을 보여 줌. 위치는 남기지 않음 |
 
 신호 대기 장면에서 Virtual Console의 브레이크 페달을 밟고 있으면 차가 더 기다리고, 떼는 순간 출발하며 말소리가 끊깁니다.
+
+시연 모드에서는 소리 출력이 쉬지 않도록 무음을 계속 내보냅니다. 에뮬레이터에서는 몇 초 조용했다가 다시 재생할 때 처음 몇 초의 소리가 조각나서, 멈췄다가 다시 나오는 문장이 깨져 들렸기 때문입니다. 실제 차량에서는 필요 없는 대책이라 시연 모드를 끄면 함께 꺼집니다. 코드는 `player/OutputWarmer.kt` 입니다.
 
 ### 핸들 이전 버튼과 안내 음성
 - 핸들의 이전 버튼은 `adb shell input keyevent 88` 로 대신합니다. `scripts/media-previous.ps1` 에 넣어 두었습니다.
