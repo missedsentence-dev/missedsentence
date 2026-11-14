@@ -67,11 +67,13 @@ class MainActivity : Activity() {
 
     override fun onStart() {
         super.onStart()
+        (application as? MissedApp)?.uiVisible = true
         controller.addTickListener(tickListener)
         render()
     }
 
     override fun onStop() {
+        (application as? MissedApp)?.uiVisible = false
         controller.removeTickListener(tickListener)
         super.onStop()
     }
